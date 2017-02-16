@@ -6,6 +6,7 @@ import org.junit.Test;
 
 import com.dreangine.exception.DebuggerException;
 
+@SuppressWarnings("static-method")
 public class DebuggerExceptionTest {
 
 	@Test
