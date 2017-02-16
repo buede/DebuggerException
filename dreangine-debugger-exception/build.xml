@@ -1,0 +1,39 @@
+<project name="DebuggerException" default="jar-lib" basedir=".">
+	<property name="dir.src" value="src/" />
+	<property name="dir.build" value="build/" />
+	<property name="jar.lib.file" value="debuggerExceptionLib.jar" />
+	<property name="jar.util.file" value="debuggerExceptionUtil.jar" />
+	<property name="zip.file" value="DebuggerException.zip" />
+	<property name="property.file" value="exceptions.properties" />
+	<property name="exclude.regex" value="**/test/**" />
+	<property name="main.class" value="com.dreangine.exception.util.DebuggerExceptionUtil" />
+
+	<target name="prepare" description="Prepares the environment">
+		<mkdir dir="${dir.build}"/>
+	</target>
+	<target name="compile" depends="prepare" description="Compile the code">
+		<javac srcdir="${dir.src}" destdir="${dir.build}" debug="true" excludes="${exclude.regex}" />
+	</target>
+	<target name="jar-lib" depends="compile" description="Make the lib jar">
+		<jar destfile="${jar.lib.file}" basedir="${dir.build}" />
+	</target>
+	<target name="jar-util" depends="compile" description="Make the util jar">
+		<jar destfile="${jar.util.file}" basedir="${dir.build}">
+			<manifest>
+				<attribute name="Main-Class" value="${main.class}"/>
+			</manifest>
+		</jar>
+	</target>
+	<target name="zip" depends="jar-lib,jar-util" description="Make the zip">
+		<copy file="${dir.src}${property.file}" todir="${basedir}" />
+		<zip destfile="${zip.file}" basedir="${basedir}">
+			<include name="${jar.lib.file}"/>
+			<include name="${jar.util.file}"/>
+			<include name="${property.file}"/>
+		</zip>
+		<delete file="${jar.lib.file}" />
+		<delete file="${jar.util.file}" />
+		<delete file="${property.file}" />
+		<delete dir="${dir.build}" />
+	</target>
+</project>
