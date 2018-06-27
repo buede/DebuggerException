@@ -1,9 +1,9 @@
 package com.dreangine.exception.test;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -15,9 +15,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.Properties;
 
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 import com.dreangine.exception.util.DebuggerExceptionUtil;
 
@@ -28,7 +28,7 @@ public class DebuggerExceptionUtilTest {
 	private FileInputStream fis;
 	private FileOutputStream fos;
 	
-	@Before
+	@BeforeEach
 	public void setup() throws Exception {
 		this.className = "com.dreangine.exception.DebuggerException"; //$NON-NLS-1$
 		this.methodName = "com.dreangine.exception.DebuggerException.isDebug"; //$NON-NLS-1$
@@ -137,7 +137,7 @@ public class DebuggerExceptionUtilTest {
 		assertEquals(propValue, this.autoGenMsg);
 	}
 	
-	@After
+	@AfterEach
 	public void reset() throws IOException {
 		this.fis.close();
 		this.fos.close();

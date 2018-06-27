@@ -74,7 +74,7 @@ public class DebuggerException extends Exception {
 	/**
 	 * This method can be used instead of the constructor that
 	 * receives an exception as a parameter.<br>
-	 * Just a aesthetic alternate.
+	 * Just an aesthetic alternate.
 	 * 
 	 * @param e thrown exception
 	 * @return an instance of <code>DebuggerException</code>

@@ -1,12 +1,14 @@
 package com.dreangine.exception.test;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
-import org.junit.Test;
+
+import org.junit.jupiter.api.Test;
 
 import com.dreangine.exception.DebuggerException;
 
-@SuppressWarnings("static-method")
 public class DebuggerExceptionTest {
 
 	@Test
@@ -22,12 +24,11 @@ public class DebuggerExceptionTest {
 		assertNotNull(de);
 	}
 	
-	@Test (expected=Exception.class)
+	@Test
 	public void testDebuggerExceptionWithEmptyException() {
 		Exception e = null;
 		assertNull(e);
-		DebuggerException de = new DebuggerException(e);
-		assertNotNull(de);
+		assertThrows(NullPointerException.class, () -> new DebuggerException(e));
 	}
 
 	@Test
