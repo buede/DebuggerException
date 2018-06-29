@@ -1,4 +1,4 @@
-package com.dreangine.exception.test;
+package xyz.dreangine.exception.test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
@@ -19,7 +19,7 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import com.dreangine.exception.util.DebuggerExceptionUtil;
+import xyz.dreangine.exception.util.DebuggerExceptionUtil;
 
 public class DebuggerExceptionUtilTest {
 	private File propsFile;

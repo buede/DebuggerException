@@ -1,4 +1,4 @@
-package com.dreangine.exception.test;
+package xyz.dreangine.exception.test;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import org.junit.jupiter.api.Test;
 
-import com.dreangine.exception.DebuggerException;
+import xyz.dreangine.exception.DebuggerException;
 
 public class DebuggerExceptionTest {
 

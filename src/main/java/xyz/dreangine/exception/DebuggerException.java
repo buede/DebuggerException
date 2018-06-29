@@ -1,9 +1,9 @@
-package com.dreangine.exception;
+package xyz.dreangine.exception;
 
 import java.util.MissingResourceException;
 import java.util.ResourceBundle;
 
-import com.dreangine.exception.util.DebuggerExceptionUtil;
+import xyz.dreangine.exception.util.DebuggerExceptionUtil;
 
 /**
  * This class has the purpose of easing the task of managing Exceptions

@@ -1,4 +1,4 @@
-package com.dreangine.exception.util;
+package xyz.dreangine.exception.util;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -18,7 +18,7 @@ import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import com.dreangine.exception.DebuggerException;
+import xyz.dreangine.exception.DebuggerException;
 
 /**
  * This class has the purpose of easing the task of creating and managing
